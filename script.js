@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.querySelector("[data-carousel]");
 
@@ -52,6 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const reveals = document.querySelectorAll(".reveal");
+
+  const showAllReveals = () => {
+    reveals.forEach((element) => element.classList.add("is-visible"));
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    showAllReveals();
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -68,4 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   reveals.forEach((element) => observer.observe(element));
+
+  window.setTimeout(showAllReveals, 1600);
 });
