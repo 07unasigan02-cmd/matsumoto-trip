@@ -1,0 +1,6 @@
+node_modules/
+.deps/
+__pycache__/
+_tmp_heic/
+*.pyc
+_test.heic
