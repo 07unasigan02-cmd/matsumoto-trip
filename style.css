@@ -566,9 +566,16 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .story-reverse .story-media,
-  .story-reverse .story-body {
-    order: initial;
+  .story > .story-body,
+  .story-reverse > .story-body,
+  .story-wide > .story-body {
+    order: 1;
+  }
+
+  .story > .story-media,
+  .story-reverse > .story-media,
+  .story-wide > .story-media {
+    order: 2;
   }
 
   .story-media,
